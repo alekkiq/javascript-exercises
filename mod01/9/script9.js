@@ -1,8 +1,9 @@
 'use strict';
 
+const output = document.getElementById('output');
+
 document.getElementById('prompt').addEventListener('click', () => {
     const number = +prompt('Enter a number');
-    const output = document.getElementById('output');
 
     if (number <= 1) {
         output.textContent = 'Invalid input!';

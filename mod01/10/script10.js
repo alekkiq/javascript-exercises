@@ -1,9 +1,10 @@
 'use strict';
 
+const output = document.getElementById('output');
+
 document.getElementById('prompt').addEventListener('click', () => {
     const numberOfDice = +prompt('Enter the number of dice');
     const sumGuess = +prompt(`Enter a sum to calculate the odds of (max: ${numberOfDice * 6})`);
-    const output = document.getElementById('output');
 
     if (numberOfDice < 1 || sumGuess > numberOfDice * 6) {
         output.textContent = 'Invalid input!';
