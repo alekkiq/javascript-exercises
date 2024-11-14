@@ -10,10 +10,8 @@ function concat(array) {
     return output;
 }
 
-document.getElementById('prompt').addEventListener('click', () => {
-    const stringArray = ['Johnny', 'DeeDee', 'Joey', 'Marky'];
-    const concatenatedString = concat(stringArray);
+const stringArray = ['Johnny', 'DeeDee', 'Joey', 'Marky'];
+const concatenatedArray = concat(stringArray);
 
-    console.log(stringArray);
-    console.log(concatenatedString);
-});
+console.log(stringArray);
+console.log(concatenatedArray);
