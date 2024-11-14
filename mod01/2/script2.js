@@ -2,8 +2,6 @@
 
 const output = document.getElementById('output');
 
-document.getElementById('prompt').addEventListener('click', () => {
-    const name = prompt('Enter your name');
+const promptedName = prompt('Enter your name');
 
-    output.textContent = `Hello, ${name}!`;
-});
+output.textContent = `Hello, ${promptedName}!`;

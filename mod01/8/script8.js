@@ -1,23 +1,14 @@
 'use strict';
 
-const output = document.querySelector('#output');
-const outputList = document.createElement('ul');
-output.appendChild(outputList);
+const output = document.getElementById('output');
 
-document.getElementById('prompt').addEventListener('click', () => {
-    const start = +prompt('Enter starting year');
-    const end = +prompt('Enter ending year');
+const start = +prompt('Enter starting year');
+const end = +prompt('Enter ending year');
 
-    if (start > end || start < 0 || end < 0) {
-        output.textContent = 'Invalid input!';
-        return;
+for (let year = start; year <= end; year++) {
+    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+        const listItem = document.createElement('li');
+        listItem.textContent = year;
+        output.append(listItem);
     }
-
-    for (let i = start; i <= end; i++) {
-        if (i % 4 === 0 && (i % 100 !== 0 || i % 400 === 0)) {
-            const listItem = document.createElement('li');
-            listItem.textContent = i;
-            outputList.appendChild(listItem);
-        }
-    }
-});
+}

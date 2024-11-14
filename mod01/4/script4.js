@@ -2,30 +2,24 @@
 
 const output = document.getElementById('output');
 
-document.getElementById('prompt').addEventListener('click', () => {
-    const name = prompt('Enter your name');
+const promptedName = prompt('Enter your name');
 
-    // a shorter way without needing conditional statements
-    // const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
-    // const rolledHouse = houses[Math.floor(Math.random() * houses.length)];
+const randomNumber = Math.floor(Math.random() * 4) + 1;
+let rolledHouse;
 
-    const randomNumber = Math.floor(Math.random() * 4);
-    let rolledHouse;
+switch (randomNumber) {
+    case 1:
+        rolledHouse = 'Gryffindor';
+        break;
+    case 2:
+        rolledHouse = 'Hufflepuff';
+        break;
+    case 3:
+        rolledHouse = 'Ravenclaw';
+        break;
+    case 4:
+        rolledHouse = 'Slytherin';
+        break;
+}
 
-    switch (randomNumber) {
-        case 0:
-            rolledHouse = 'Gryffindor';
-            break;
-        case 1:
-            rolledHouse = 'Hufflepuff';
-            break;
-        case 2:
-            rolledHouse = 'Ravenclaw';
-            break;
-        case 3:
-            rolledHouse = 'Slytherin';
-            break;
-    }
-
-    output.textContent = `${name}, you are a ${rolledHouse}.`;
-});
+output.textContent = `${promptedName}, you are a ${rolledHouse}.`;
