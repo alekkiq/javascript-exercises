@@ -16,7 +16,8 @@ for (let i = 1; i <= numberOfPeople; i++) {
 // ask for the votes
 candidates.forEach((candidate) => {
     const validCandidates = candidates.filter((c) => c.name !== candidate.name);
-    const candidateToVote = prompt(`Who do you vote for, ${candidate.name}?\nOptions:\n${validCandidates.map((c) => c.name).join(', ')}`);
+    const options = validCandidates.map((c) => c.name).join(', ')
+    const candidateToVote = prompt(`Who do you vote for, ${candidate.name}?\nOptions:\n${options}`);
     const candidateVoted = candidates.find((c) => c.name === candidateToVote.toLowerCase());
 
     if (candidateVoted) {
