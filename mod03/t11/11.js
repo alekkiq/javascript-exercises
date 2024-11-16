@@ -137,19 +137,14 @@ function initializeCards() {
     cardElements.push(cardElement);
     target.appendChild(cardElement);
 
-    // set the click listener
+    // handle the modal image & opening on click
     cardElement.addEventListener('click', () => {
-      showModal(index)
+      modalImg.src = picArray[index].image.large;
+      modalImg.alt = picArray[index].title;
+
+      modal.showModal();
     });
   });
-}
-
-// handles the correct image in the modal & opens it
-function showModal(picArrayIndex) {
-  modalImg.src = picArray[picArrayIndex].image.large;
-  modalImg.alt = picArray[picArrayIndex].title;
-
-  modal.showModal();
 }
 
 // run all the stuff once the dom is loaded
