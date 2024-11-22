@@ -147,11 +147,8 @@ function initializeCards() {
   });
 }
 
-// run all the stuff once the dom is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  initializeCards();
+initializeCards();
 
-  modal.querySelector('#close-modal').addEventListener('click', () => {
-    modal.close();
-  });
+modal.querySelector('#close-modal').addEventListener('click', () => {
+  modal.close();
 });
